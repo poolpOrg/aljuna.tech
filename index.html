@@ -9,10 +9,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #000000;
+            background-color: #000000; /* Utilisation de la couleur de fond du logo */
         }
         .container {
             text-align: center;
@@ -21,11 +22,25 @@
             max-width: 100%;
             height: auto;
         }
+        .legal-link {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .legal-link a {
+            color: #333;
+            text-decoration: none;
+        }
+        .legal-link a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <img src="aljuna.webp" alt="Aljuna Tech">
+        <div class="legal-link">
+            <a href="mentions-legales.html">Mentions légales</a>
+        </div>
     </div>
 </body>
 </html>
