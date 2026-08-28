@@ -1,47 +1,147 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aljuna Tech</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000000; /* Utilisation de la couleur de fond du logo */
-        }
-        .container {
-            text-align: center;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        .legal-link {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #dedede;
-        }
-        .legal-link a {
-            color: #dedede;
-            text-decoration: none;
-        }
-        .legal-link a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aljuna Tech — Architecture review and technical due diligence</title>
+  <meta name="description" content="Architecture review, code audits and technical due diligence by Gilles Chehade, author of OpenSMTPD and CTO of Plakar. Aljuna Tech, Nantes.">
+  <link rel="canonical" href="https://aljuna.tech/">
+  <link rel="alternate" hreflang="en" href="https://aljuna.tech/">
+  <link rel="alternate" hreflang="fr" href="https://aljuna.tech/fr.html">
+  <link rel="alternate" hreflang="x-default" href="https://aljuna.tech/">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <img src="aljuna.webp" alt="Aljuna Tech">
-        <div class="legal-link">
-            <a href="legal.html">Mentions légales</a>
-        </div>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="hero">
+    <div class="wrap grid">
+      <p class="label">Aljuna Tech</p>
+      <div class="body">
+        <p class="eyebrow rise">Gilles Chehade · Author of OpenSMTPD · CTO of Plakar</p>
+        <h1 class="rise rise-2">Architecture review and technical due diligence.</h1>
+        <p class="standfirst rise rise-3">For CTOs and VPs of engineering who want a design or a codebase read closely — and for fund partners and acquirers who need the technical side of a deal checked. Twenty-five years in the trade, as consultant, lead developer and architect.</p>
+      </div>
     </div>
+  </header>
+
+  <main id="main">
+    <section class="section" aria-labelledby="review-title">
+      <div class="wrap grid">
+        <p class="label" aria-hidden="true">Review</p>
+        <div class="body">
+          <h2 id="review-title">Architecture and code review</h2>
+          <p>The same work in two forms. Before you build, I read the design and point at what will break in production. Once it runs, I read the code and its behaviour under load, and explain why it breaks now.</p>
+          <ul class="scope">
+            <li><strong>Architecture design.</strong> The shape of the system — boundaries, data flow, what happens when it grows.</li>
+            <li><strong>Reliability and fail-safe design.</strong> How the system degrades, how it recovers, what it refuses to lose.</li>
+            <li><strong>APIs and hygiene.</strong> Contracts, versioning, dependencies, build.</li>
+            <li><strong>Security.</strong> Exposure, secrets, and how a vulnerability report reaches you.</li>
+          </ul>
+          <p class="note">Most of the evidence is public. OpenSMTPD ships in the OpenBSD base system since 2013 and parses hostile input on port 25 for a living. At Plakar I work on kloset, a content-addressable backup engine. The rest ran in production behind NDAs, including PCI-DSS environments. Read the code before you read this page.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="diligence-title">
+      <div class="wrap grid">
+        <p class="label" aria-hidden="true">Diligence</p>
+        <div class="body">
+          <h2 id="diligence-title">Technical due diligence</h2>
+          <p>For funds and acquirers, pre-seed through Series B, on infrastructure, developer tools and open source. The question is not whether the code is clean. It is whether the codebase matches the story in the deck, and whether the team could rebuild what they are demoing.</p>
+          <p>It now includes a newer question: how much of this was generated rather than engineered — and whether anyone on the team can still tell the difference.</p>
+          <p>The team gets read too, not just the repository. I studied occupational psychology for years; half of a diligence is people — who holds the knowledge, and what leaves when they do.</p>
+          <p>One to five days of work, sized to the deal. The deliverable is one written memo: what exists, what is fragile, what a fix would cost. Under NDA. Conflicts are declared up front — name the target in your first mail so they can be checked before anything is signed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="mail-title">
+      <div class="wrap grid">
+        <p class="label" aria-hidden="true">Mail</p>
+        <div class="body">
+          <h2 id="mail-title">Mail infrastructure</h2>
+          <p>I wrote OpenSMTPD, the mail server that ships in the OpenBSD base system. If your problem involves SMTP, you are talking to someone who implemented it.</p>
+          <ul class="scope">
+            <li><strong>Review.</strong> An existing mail setup read end to end — topology, queues, filtering, TLS.</li>
+            <li><strong>Migration.</strong> Off hosted mail, onto servers you control.</li>
+            <li><strong>Deliverability.</strong> SPF, DKIM, DMARC, IP reputation, and why your invoices land in spam.</li>
+            <li><strong>Post-incident forensics.</strong> Headers, logs and queues, after a compromise or a loss.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="ai-title">
+      <div class="wrap grid">
+        <p class="label" aria-hidden="true">AI</p>
+        <div class="body">
+          <h2 id="ai-title">AI in the workflow</h2>
+          <p>Engineering workflows are being rebuilt around AI — some of it warranted, some of it theatre. I use these tools every day and know their upsides as well as their failure modes.</p>
+          <p>Changing how a team works is a productivity question before a tooling question. The work is concrete: take an existing workflow, decide where a model helps and where it has no business, put review where it belongs, and measure the result — neither buying the hype nor underusing what works.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="engagements-title">
+      <div class="wrap grid">
+        <p class="label" aria-hidden="true">Engagements</p>
+        <div class="body">
+          <h2 id="engagements-title">Engagements</h2>
+          <p>I am CTO of Plakar, full time. Consulting fits around that, which is why the formats are short and defined: a scoped start, a scoped end, a written result.</p>
+          <p>Advisory is the one recurring format: a monthly block of hours for the questions that do not justify an audit — a design to sanity-check, a hire to interview, an incident to read.</p>
+          <ul class="formats">
+            <li class="format"><span class="format-name">Architecture review</span> <span class="format-time">one day · €1,200–1,500</span></li>
+            <li class="format"><span class="format-name">Audit</span> <span class="format-time">two to three weeks · €900–1,200 per day</span></li>
+            <li class="format"><span class="format-name">Due diligence</span> <span class="format-time">one to five days · €1,400–1,800 per day</span></li>
+            <li class="format"><span class="format-name">Advisory</span> <span class="format-time">monthly, capped hours · €2,000–3,000 per month</span></li>
+          </ul>
+          <p class="rates">Rates exclusive of VAT. Fixed quote before work starts.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="exclusions-title">
+      <div class="wrap grid">
+        <p class="label" aria-hidden="true">Exclusions</p>
+        <div class="body">
+          <div class="exclusions">
+            <h2 id="exclusions-title">What I don't take on</h2>
+            <ol>
+              <li><strong>Backup and storage products.</strong> That is the day job at Plakar. It is not for sale here.</li>
+              <li><strong>Staff augmentation.</strong> I do not join your team, your standups or your sprint board.</li>
+              <li><strong>Anything with a conflict of interest.</strong> Targets and clients are checked against each other before an NDA is signed. When in doubt, I decline.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="contact-title">
+      <div class="wrap grid">
+        <p class="label" aria-hidden="true">Contact</p>
+        <div class="body">
+          <h2 id="contact-title">Contact</h2>
+          <p class="contact-p"><a class="contact-email" href="mailto:contact@aljuna.tech">contact@aljuna.tech</a></p>
+          <p>One mail is enough: the system, the decision it blocks, the deadline. For due diligence, name the target — conflicts are checked before anything else is discussed.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap grid">
+      <p class="label">See also</p>
+      <div class="body">
+        <p class="footer-id">Aljuna Tech · SAS · 30 boulevard de l'Estuaire, 44200 Nantes · RCS Nantes 930 812 516</p>
+        <ul class="footer-links">
+          <li><a href="fr.html" lang="fr" hreflang="fr">Français</a></li>
+          <li><a href="legal.html" lang="fr">Mentions légales</a></li>
+          <li><a href="https://poolp.org">poolp.org</a></li>
+          <li><a href="https://github.com/poolpOrg">github.com/poolpOrg</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
