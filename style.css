@@ -320,6 +320,71 @@ h2 {
 }
 
 /* ------------------------------------------------------------------ */
+/* Publications carousel — CSS scroll-snap, no JS                     */
+/* ------------------------------------------------------------------ */
+
+.carousel {
+  list-style: none;
+  display: flex;
+  gap: 14px;
+  margin: 28px 0 0;
+  padding: 2px 2px 14px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-color: var(--hairline) transparent;
+  scrollbar-width: thin;
+}
+
+.pub {
+  flex: 0 0 250px;
+  scroll-snap-align: start;
+}
+
+.pub-link {
+  display: block;
+  height: 100%;
+  border: 1px solid var(--hairline);
+  background: var(--panel);
+  text-decoration: none;
+}
+
+a.pub-link:hover {
+  border-color: var(--signal);
+}
+
+.pub-thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.pub-kicker {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--mid);
+  padding: 12px 14px 4px;
+}
+
+.pub-title {
+  display: block;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  padding: 0 14px 14px;
+}
+
+@media (max-width: 480px) {
+  .pub {
+    flex-basis: 230px;
+  }
+}
+
+/* ------------------------------------------------------------------ */
 /* Engagement formats                                                 */
 /* ------------------------------------------------------------------ */
 

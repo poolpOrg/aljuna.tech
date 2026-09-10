@@ -30,12 +30,14 @@
       <div class="wrap grid">
         <p class="label" aria-hidden="true">Review</p>
         <div class="body">
-          <h2 id="review-title">Architecture and code review</h2>
-          <p>The same work in two forms. Before you build, I read the design and point at what will break in production. Once it runs, I read the code and its behaviour under load, and explain why it breaks now.</p>
+          <h2 id="review-title">Audits and reviews</h2>
+          <p>A one-day read or a multi-week audit, on the same principle: before you build, I read the design and point at what will break in production; once it runs, I read the system and explain why it breaks now. The scope is wider than code — the software, the infrastructure it runs on, and the workflows that produce both.</p>
           <ul class="scope">
             <li><strong>Architecture design.</strong> The shape of the system — boundaries, data flow, what happens when it grows.</li>
+            <li><strong>Infrastructure design.</strong> The ground under the software — topology, failure domains, what pages someone at night.</li>
             <li><strong>Reliability and fail-safe design.</strong> How the system degrades, how it recovers, what it refuses to lose.</li>
             <li><strong>APIs and hygiene.</strong> Contracts, versioning, dependencies, build.</li>
+            <li><strong>Workflows and processes.</strong> How the work happens — reviews, releases, incident response, and where AI sits in it.</li>
             <li><strong>Security.</strong> Exposure, secrets, and how a vulnerability report reaches you.</li>
           </ul>
           <p class="note">Most of the evidence is public. OpenSMTPD ships in the OpenBSD base system since 2013 and parses hostile input on port 25 for a living. At Plakar I work on kloset, a content-addressable backup engine. The rest ran in production behind NDAs, including PCI-DSS environments. Read the code before you read this page.</p>
@@ -80,6 +82,95 @@
           <p>AI is the best ally or the worst enemy of an engineering team, depending entirely on how it is used. Used well, the productivity gains are real and large. Used carelessly, it quietly lowers the value of the project.</p>
           <p>The failure modes are specific: critical paths written with poor judgment however well they were specified, data handled without care, a team's understanding thinning to the macro view — until the code cannot be maintained and an incident lands with nobody knowing where to look.</p>
           <p>I use these tools every day and hold no ideology about them. The work is concrete: take an existing workflow, decide where a model helps and where it has no business, put review where it belongs, and measure the result — neither buying the hype nor underusing what works.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="pubs-title">
+      <div class="wrap grid">
+        <p class="label" aria-hidden="true">Publications</p>
+        <div class="body">
+          <h2 id="pubs-title">Talks, articles, podcasts</h2>
+          <p>The public record, if you want to run your own due diligence on me.</p>
+          <ul class="carousel">
+            <li class="pub">
+              <a class="pub-link" href="https://www.youtube.com/watch?v=p0S1bbO-h0k">
+                <img class="pub-thumb" src="img/pubs/p0S1bbO-h0k.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Talk · EuroBSDCon · 2017</span>
+                <span class="pub-title">OpenSMTPD, current state of affairs</span>
+              </a>
+            </li>
+            <li class="pub">
+              <a class="pub-link" href="https://www.youtube.com/watch?v=tPjj-RpV3-w">
+                <img class="pub-thumb" src="img/pubs/tPjj-RpV3-w.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Podcast · FLOSS Weekly 543 · 2019</span>
+                <span class="pub-title">OpenSMTPD</span>
+              </a>
+            </li>
+            <li class="pub">
+              <a class="pub-link" href="https://www.youtube.com/watch?v=k8_BzwWN-3Y">
+                <img class="pub-thumb" src="img/pubs/k8_BzwWN-3Y.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Talk · Capitole du Libre · 2025</span>
+                <span class="pub-title" lang="fr">Plakar : moteur de sauvegarde immuable, vérifiable et distribuable</span>
+              </a>
+            </li>
+            <li class="pub">
+              <a class="pub-link" href="https://www.youtube.com/watch?v=hIRrcLmSsPY">
+                <img class="pub-thumb" src="img/pubs/hIRrcLmSsPY.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Talk · Golang Nantes · 2026</span>
+                <span class="pub-title">Content-defined chunking — lightning talk</span>
+              </a>
+            </li>
+            <li class="pub">
+              <a class="pub-link" href="https://www.youtube.com/watch?v=iIDqvY7-x80">
+                <img class="pub-thumb" src="img/pubs/iIDqvY7-x80.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Talk · Cloud Native Days France · 2026</span>
+                <span class="pub-title" lang="fr">La résilience Cloud Native avec la solution open source Plakar</span>
+              </a>
+            </li>
+            <li class="pub">
+              <a class="pub-link" href="https://www.youtube.com/watch?v=Unp40gp3WRs">
+                <img class="pub-thumb" src="img/pubs/Unp40gp3WRs.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Podcast · À la french · 2026</span>
+                <span class="pub-title" lang="fr">Ils ont effacé la prod ! Histoires vécues de backup, rançons et clouds défaillants</span>
+              </a>
+            </li>
+            <li class="pub">
+              <a class="pub-link" href="https://www.youtube.com/watch?v=odFMnHACHBI">
+                <img class="pub-thumb" src="img/pubs/odFMnHACHBI.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Podcast · Certo Modo</span>
+                <span class="pub-title">Reliability Rebels — episode 15</span>
+              </a>
+            </li>
+            <li class="pub">
+              <a class="pub-link" href="https://poolp.org/posts/2026-08-13/preventive-software-maintenance/">
+                <img class="pub-thumb" src="img/pubs/poolp-preventive.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Article · poolp.org · 2026</span>
+                <span class="pub-title">Preventive software maintenance</span>
+              </a>
+            </li>
+            <li class="pub">
+              <a class="pub-link" href="https://connect.ed-diamond.com/misc/misc-135/openbsd-reduire-la-surface-d-attaque-avec-pledge2">
+                <img class="pub-thumb" src="img/pubs/misc-135.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Print · MISC magazine</span>
+                <span class="pub-title" lang="fr">Réduire la surface d'attaque avec pledge(2)</span>
+              </a>
+            </li>
+            <li class="pub">
+              <a class="pub-link" href="https://connect.ed-diamond.com/misc/misc-137/securiser-les-cles-privees-avec-la-separation-de-privileges-cryptographiques">
+                <img class="pub-thumb" src="img/pubs/misc-137.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Print · MISC magazine</span>
+                <span class="pub-title" lang="fr">Sécuriser les clés privées avec la séparation de privilèges cryptographiques</span>
+              </a>
+            </li>
+            <li class="pub">
+              <a class="pub-link" href="https://connect.ed-diamond.com/misc/misc-145/openbsd-devoiler-son-systeme-de-fichiers-avec-unveil2">
+                <img class="pub-thumb" src="img/pubs/misc-145.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Print · MISC magazine</span>
+                <span class="pub-title" lang="fr">Dévoiler son système de fichiers avec unveil(2)</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

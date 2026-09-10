@@ -30,12 +30,14 @@
       <div class="wrap grid">
         <p class="label" aria-hidden="true">Revue</p>
         <div class="body">
-          <h2 id="review-title">Revue d'architecture et de code</h2>
-          <p>Le même travail sous deux formes. Avant de construire, je lis la conception et je pointe ce qui cassera en production. Une fois le système en route, je lis le code et son comportement en charge, et j'explique pourquoi ça casse maintenant.</p>
+          <h2 id="review-title">Audits et revues</h2>
+          <p>Une journée de lecture ou un audit de plusieurs semaines, sur le même principe : avant de construire, je lis la conception et je pointe ce qui cassera en production ; une fois le système en route, je lis l'ensemble et j'explique pourquoi ça casse maintenant. Le périmètre dépasse le code — le logiciel, l'infrastructure qui le porte, et les workflows qui produisent les deux.</p>
           <ul class="scope">
             <li><strong>Conception d'architecture.</strong> La forme du système — frontières, flux de données, ce qui se passe quand il grandit.</li>
+            <li><strong>Conception d'infrastructure.</strong> Le sol sous le logiciel — topologie, domaines de panne, ce qui réveille quelqu'un la nuit.</li>
             <li><strong>Fiabilité et sûreté de fonctionnement.</strong> Comment le système se dégrade, comment il reprend, ce qu'il refuse de perdre.</li>
             <li><strong>API et hygiène.</strong> Contrats, versionnage, dépendances, build.</li>
+            <li><strong>Workflows et processus.</strong> Comment le travail se fait — revues, mises en production, réponse aux incidents, et la place de l'IA dedans.</li>
             <li><strong>Sécurité.</strong> Surface d'exposition, secrets, et comment un rapport de vulnérabilité vous parvient.</li>
           </ul>
           <p class="note">L'essentiel des preuves est public. OpenSMTPD est livré dans le système de base d'OpenBSD depuis 2013 et gagne sa vie à parser de l'entrée hostile sur le port 25. Chez Plakar, je travaille sur kloset, un moteur de sauvegarde adressé par contenu. Le reste a tourné en production sous NDA, y compris en environnement PCI-DSS. Lisez le code avant de lire cette page.</p>
@@ -80,6 +82,95 @@
           <p>L'IA est le meilleur allié ou le pire ennemi d'une équipe d'ingénierie, selon l'usage qu'on en fait. Bien employée, les gains de productivité sont réels et importants. Employée sans précaution, elle fait baisser la valeur du projet, sans bruit.</p>
           <p>Les modes d'échec sont précis : des chemins critiques écrits avec peu de jugement, aussi bien spécifiés soient-ils ; des données manipulées sans soin ; une compréhension d'équipe réduite à la vue macro — jusqu'au code impossible à maintenir et à l'incident où personne ne sait où chercher.</p>
           <p>J'utilise ces outils tous les jours, sans idéologie. Le travail est concret : prendre un workflow existant, décider où un modèle aide et où il n'a rien à faire, placer la relecture au bon endroit, mesurer le résultat — sans acheter la hype, ni sous-employer ce qui marche.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="pubs-title">
+      <div class="wrap grid">
+        <p class="label" aria-hidden="true">Publications</p>
+        <div class="body">
+          <h2 id="pubs-title">Conférences, articles, podcasts</h2>
+          <p>Le dossier public, si vous voulez mener votre propre due diligence sur moi.</p>
+          <ul class="carousel">
+            <li class="pub">
+              <a class="pub-link" href="https://www.youtube.com/watch?v=p0S1bbO-h0k">
+                <img class="pub-thumb" src="img/pubs/p0S1bbO-h0k.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Conférence · EuroBSDCon · 2017</span>
+                <span class="pub-title" lang="en">OpenSMTPD, current state of affairs</span>
+              </a>
+            </li>
+            <li class="pub">
+              <a class="pub-link" href="https://www.youtube.com/watch?v=tPjj-RpV3-w">
+                <img class="pub-thumb" src="img/pubs/tPjj-RpV3-w.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Podcast · FLOSS Weekly 543 · 2019</span>
+                <span class="pub-title">OpenSMTPD</span>
+              </a>
+            </li>
+            <li class="pub">
+              <a class="pub-link" href="https://www.youtube.com/watch?v=k8_BzwWN-3Y">
+                <img class="pub-thumb" src="img/pubs/k8_BzwWN-3Y.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Conférence · Capitole du Libre · 2025</span>
+                <span class="pub-title">Plakar : moteur de sauvegarde immuable, vérifiable et distribuable</span>
+              </a>
+            </li>
+            <li class="pub">
+              <a class="pub-link" href="https://www.youtube.com/watch?v=hIRrcLmSsPY">
+                <img class="pub-thumb" src="img/pubs/hIRrcLmSsPY.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Conférence · Golang Nantes · 2026</span>
+                <span class="pub-title" lang="en">Content-defined chunking — lightning talk</span>
+              </a>
+            </li>
+            <li class="pub">
+              <a class="pub-link" href="https://www.youtube.com/watch?v=iIDqvY7-x80">
+                <img class="pub-thumb" src="img/pubs/iIDqvY7-x80.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Conférence · Cloud Native Days France · 2026</span>
+                <span class="pub-title">La résilience Cloud Native avec la solution open source Plakar</span>
+              </a>
+            </li>
+            <li class="pub">
+              <a class="pub-link" href="https://www.youtube.com/watch?v=Unp40gp3WRs">
+                <img class="pub-thumb" src="img/pubs/Unp40gp3WRs.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Podcast · À la french · 2026</span>
+                <span class="pub-title">Ils ont effacé la prod ! Histoires vécues de backup, rançons et clouds défaillants</span>
+              </a>
+            </li>
+            <li class="pub">
+              <a class="pub-link" href="https://www.youtube.com/watch?v=odFMnHACHBI">
+                <img class="pub-thumb" src="img/pubs/odFMnHACHBI.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Podcast · Certo Modo</span>
+                <span class="pub-title" lang="en">Reliability Rebels — episode 15</span>
+              </a>
+            </li>
+            <li class="pub">
+              <a class="pub-link" href="https://poolp.org/posts/2026-08-13/preventive-software-maintenance/">
+                <img class="pub-thumb" src="img/pubs/poolp-preventive.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Article · poolp.org · 2026</span>
+                <span class="pub-title" lang="en">Preventive software maintenance</span>
+              </a>
+            </li>
+            <li class="pub">
+              <a class="pub-link" href="https://connect.ed-diamond.com/misc/misc-135/openbsd-reduire-la-surface-d-attaque-avec-pledge2">
+                <img class="pub-thumb" src="img/pubs/misc-135.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Presse · MISC magazine</span>
+                <span class="pub-title">Réduire la surface d'attaque avec pledge(2)</span>
+              </a>
+            </li>
+            <li class="pub">
+              <a class="pub-link" href="https://connect.ed-diamond.com/misc/misc-137/securiser-les-cles-privees-avec-la-separation-de-privileges-cryptographiques">
+                <img class="pub-thumb" src="img/pubs/misc-137.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Presse · MISC magazine</span>
+                <span class="pub-title">Sécuriser les clés privées avec la séparation de privilèges cryptographiques</span>
+              </a>
+            </li>
+            <li class="pub">
+              <a class="pub-link" href="https://connect.ed-diamond.com/misc/misc-145/openbsd-devoiler-son-systeme-de-fichiers-avec-unveil2">
+                <img class="pub-thumb" src="img/pubs/misc-145.jpg" alt="" width="640" height="360" loading="lazy">
+                <span class="pub-kicker">Presse · MISC magazine</span>
+                <span class="pub-title">Dévoiler son système de fichiers avec unveil(2)</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
