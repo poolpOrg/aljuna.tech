@@ -290,6 +290,14 @@ h2 {
   margin: 0 0 16px;
 }
 
+/* Justify the running text only — titles, labels, cards and the
+   format table stay ragged. Single-line elements are unaffected. */
+main .body p,
+.scope li,
+.exclusions li {
+  text-align: justify;
+}
+
 .body p:last-child {
   margin-bottom: 0;
 }

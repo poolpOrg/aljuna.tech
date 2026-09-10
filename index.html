@@ -40,7 +40,7 @@
             <li><strong>Workflows and processes.</strong> How the work happens — reviews, releases, incident response, and where AI sits in it.</li>
             <li><strong>Security.</strong> Exposure, secrets, and how a vulnerability report reaches you.</li>
           </ul>
-          <p class="note">Most of the evidence is public. OpenSMTPD ships in the OpenBSD base system since 2013 and parses hostile input on port 25 for a living. At Plakar I work on kloset, a content-addressable backup engine. The rest ran in production behind NDAs, including PCI-DSS environments. Read the code before you read this page.</p>
+          <p class="note">Most of the evidence is public. OpenSMTPD ships in the OpenBSD base system since 2013 and parses hostile input on port 25 for a living. At Plakar I work on kloset, a content-addressable backup engine. The rest ran in production behind NDAs — payment and mail systems at Veepee and Dalenys, PCI-DSS included. Read the code before you read this page.</p>
         </div>
       </div>
     </section>
@@ -52,7 +52,7 @@
           <h2 id="diligence-title">Technical due diligence</h2>
           <p>For funds and acquirers, pre-seed through Series B, on infrastructure, developer tools and open source. The question is not whether the code is clean. It is whether the codebase matches the story in the deck, and whether the team could rebuild what they are demoing.</p>
           <p>It now includes a newer question: how much of this was generated rather than engineered — and whether anyone on the team can still tell the difference.</p>
-          <p>The team gets read too, not just the repository. I studied occupational psychology for years; half of a diligence is people — who holds the knowledge, and what leaves when they do.</p>
+          <p>The team gets read too, not just the repository. I studied occupational psychology for seven years at CNAM; half of a diligence is people — who holds the knowledge, and what leaves when they do.</p>
           <p>One to five days of work, sized to the deal. The deliverable is one written memo: what exists, what is fragile, what a fix would cost. Under NDA. Conflicts are declared up front — name the target in your first mail so they can be checked before anything is signed.</p>
         </div>
       </div>
@@ -63,7 +63,7 @@
         <p class="label" aria-hidden="true">Mail</p>
         <div class="body">
           <h2 id="mail-title">Mail infrastructure</h2>
-          <p>I wrote OpenSMTPD, the mail server that ships in the OpenBSD base system. If your problem involves SMTP, you are talking to someone who implemented it.</p>
+          <p>I wrote OpenSMTPD, the mail server that ships in the OpenBSD base system. If your problem involves SMTP, you are talking to someone who implemented it. At Dalenys I ran the other side too: a distributed e-mail router and its deliverability to the main French and US ISPs.</p>
           <ul class="scope">
             <li><strong>Review.</strong> An existing mail setup read end to end — topology, queues, filtering, TLS.</li>
             <li><strong>Migration.</strong> Off hosted mail, onto servers you control.</li>
@@ -180,7 +180,7 @@
         <p class="label" aria-hidden="true">Engagements</p>
         <div class="body">
           <h2 id="engagements-title">Engagements</h2>
-          <p>I am CTO of Plakar, full time. Consulting fits around that, which is why the formats are short and defined: a scoped start, a scoped end, a written result.</p>
+          <p>I am CTO of Plakar, full time. Consulting fits around that, which is why the formats are short and defined: a scoped start, a scoped end, a written result. The practice is not new: I freelanced on the same work from 2019 to 2024, under NDA.</p>
           <p>Advisory is the one recurring format: a monthly block of hours for the questions that do not justify an audit — a design to sanity-check, a hire to interview, an incident to read.</p>
           <ul class="formats">
             <li class="format"><span class="format-name">Architecture review</span> <span class="format-time">one day · €1,200–1,500</span></li>
